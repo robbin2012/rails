@@ -10,8 +10,8 @@ RUN apt-get install -y mysql-client --no-install-recommends && rm -rf /var/lib/a
 RUN mkdir /myapp
 WORKDIR /myapp
 
-gem sources --remove https://rubygems.org/
-gem sources -a https://ruby.taobao.org/
+RUN gem sources --remove https://rubygems.org/
+RUN gem sources -a https://ruby.taobao.org/
 
 # build rails & gems
 RUN gem install rails --version 3.2.21
